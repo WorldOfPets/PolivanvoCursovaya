@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dcde13d2-5a80-481a-9c17-c1920ee7c5d8": {
+      "ProjectGuid": "dcde13d2-5a80-481a-9c17-c1920ee7c5d8",
+      "DisplayName": "AppCurs",
+      "ColorIndex": 0
+    },
+    "bc9d36b4-67a5-4223-86dc-4a655ee617c9": {
+      "ProjectGuid": "bc9d36b4-67a5-4223-86dc-4a655ee617c9",
+      "DisplayName": "AppCurs.Android",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

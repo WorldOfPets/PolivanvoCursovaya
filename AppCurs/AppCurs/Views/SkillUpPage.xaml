@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCurs.Views.SkillUpPage"
+             xmlns:local="clr-namespace:AppCurs.ViewModels" 
+             xmlns:model="clr-namespace:AppCurs.Models" 
+             Title="SKILL UP ARTICLE">
+    <ContentPage.Content>
+        <Grid Background="#17171A">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <StackLayout HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                
+            <Label Grid.Row="0"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   Text="Quote of the day:"/>
+                <Label Grid.Row="0"
+                   FontSize="30"
+                       FontFamily=""
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold,Italic"
+                   TextColor="White"
+                   Text="JUST DO IT"/>
+            </StackLayout>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    
+                <Label Text="ARTICLES"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       Margin="20, 0"/>
+                    <Frame Padding="0"
+                       HeightRequest="3"
+                       Margin="20, 0"
+                       Background="#6666CC"/>
+                </StackLayout>
+                <ScrollView Grid.Row="1"
+                            
+                            Margin="20, 0">
+                    <RefreshView x:DataType="local:ItemsViewModel" 
+                                 x:Name="JustDoItList"
+                             Command="{Binding LoadItemsCommandJustDoIt}" 
+                             IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+
+                        <CollectionView     
+                            ItemsSource="{Binding ItemsJustDoIt}"
+                            SelectionMode="None">
+                            
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Padding="0"
+                                                 Margin="5"
+                                                 x:Name="MainStackLayout"
+                                                 x:DataType="model:Item">
+                                        <Frame BackgroundColor="#222228"
+                                               CornerRadius="20"
+                                               Margin="0, 0"
+                                               HeightRequest="40"
+                                               Padding="0">
+                                            <Grid>
+                                                <Label Text="{Binding Text}" 
+                                                       TextColor="White"
+                                                       Margin="20, 0"
+                                                       LineBreakMode="NoWrap"
+                                                       VerticalOptions="Center"
+                                                        Style="{DynamicResource ListItemTextStyle}" 
+                                                        FontSize="16" />
+                                            </Grid>
+
+                                        </Frame>
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                            NumberOfTapsRequired="1"
+                                                Tapped="TapGestureRecognizer_Tapped"		
+                                            CommandParameter="{Binding .}">
+                                            </TapGestureRecognizer>
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </RefreshView>
+                </ScrollView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

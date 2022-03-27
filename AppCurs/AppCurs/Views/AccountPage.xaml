@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCurs.Views.AccountPage"
+             Title="ACCOUNT">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#17171A">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Frame
+                Padding="0"
+                Grid.Row="0"
+                VerticalOptions="Start"
+                Visual="Default"
+                Margin="60, 20"
+                BackgroundColor="#17171A">
+                
+            <Image Source="ProfilePhoto.png"
+                   Visual="Default"/>
+                
+            </Frame>
+            <StackLayout
+                Margin="0"
+                Grid.Row="1">
+                <Label Text="DRINKERTEA"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="24"/>
+                <Frame
+                    Visual="Default"
+                    BackgroundColor="#17171A"
+                    BorderColor="#6666CC"
+                    Padding="0"
+                    CornerRadius="10"
+                    Margin="20, 0">
+                    
+                <StackLayout Margin="10, 5"
+                       Padding="5">
+                    <Label Text="Email: polivanov004@gmail.com"
+                           TextColor="White"
+                           FontSize="16"/>
+                    <Label Text="Password: ****"
+                           TextColor="White"
+                           FontSize="16"/>
+                </StackLayout>
+                </Frame>
+                <Button VerticalOptions="End"
+                        Margin="20, 5"
+                        Text="EDIT PROFILE"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="60"
+                        BackgroundColor="#6666CC"/>
+                <Button VerticalOptions="End"
+                        Margin="20, 0"
+                        Text="SKILL UP"
+                        Clicked="Button_Clicked"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="60"
+                        BackgroundColor="#6666CC"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

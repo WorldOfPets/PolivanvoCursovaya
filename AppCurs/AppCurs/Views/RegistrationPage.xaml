@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCurs.Views.RegistrationPage"
+             xmlns:vm="clr-namespace:AppCurs.ViewModels"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             Background="#17171A">
+    <ContentPage.BindingContext>
+        <vm:RegistrationViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label Text="TASK MASTER" 
+                   HorizontalOptions="Center"
+                   FontSize="Title"
+                   Grid.Row="0"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   FontFamily="Roboto"/>
+            <StackLayout 
+                Grid.Row="1"
+                Margin="10, 0"
+                VerticalOptions="Center">
+                <Frame 
+                    BackgroundColor="#222228"
+                    Margin="10, 5"
+                    Padding="5, 2"
+                    Visual="Default"
+                    BorderColor="#6666CC"
+                    CornerRadius="10">
+                    <Entry 
+                        Placeholder="Login"
+                        TextColor="White"
+                        x:Name="ELogin"
+                        Visual="Default"
+                   PlaceholderColor="White"
+                   BackgroundColor="#222228"/>
+                </Frame>
+                <Frame 
+                    BackgroundColor="#222228"
+                    Margin="10, 5"
+                    Padding="5, 2"
+                    Visual="Default"
+                    BorderColor="#6666CC"
+                    CornerRadius="10">
+                    <Entry 
+                    Placeholder="Email"
+                    
+                    x:Name="EEmail"
+                    IsPassword="True"
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    BackgroundColor="#222228"/>
+                </Frame>
+                <Frame BackgroundColor="#222228"
+                   Margin="10, 5"
+                   Padding="5, 2"
+                       Visual="Default"
+                       BorderColor="#6666CC"
+                   CornerRadius="10">
+                    <Entry 
+                    Placeholder="Password"
+                    
+                    x:Name="EPass"
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    BackgroundColor="#222228"/>
+                </Frame>
+                <Frame BackgroundColor="#222228"
+                   Margin="10, 5"
+                       Visual="Default"
+                   Padding="5, 2"
+                       BorderColor="#6666CC"
+                   CornerRadius="10">
+                    <Entry 
+                    Placeholder="Repeat password"
+                    Visual="Default"
+                    x:Name="ERPass"
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    BackgroundColor="#222228"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout 
+                Grid.Row="2"
+                VerticalOptions="End"
+                Margin="10, 20">
+                <Button 
+                    Margin="10, 10"
+                    CornerRadius="10"
+                    BackgroundColor="#6666CC"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Text="SIGN UP" Command="{Binding LoginCommand}"/>
+                <Label 
+                    HorizontalOptions="Center"
+                    Margin="10"
+                    VerticalOptions="CenterAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span 
+                                Text="Authorization"
+                                TextColor="White"
+                                TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LinkToAuthorization}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

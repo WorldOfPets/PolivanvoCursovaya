@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="#17171A"
+             x:Class="AppCurs.Views.LoginPage"
+             Visual="Material"
+             xmlns:vm="clr-namespace:AppCurs.ViewModels"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+         
+            <Label Text="TASK MASTER" HorizontalOptions="Center"
+                   FontSize="Title"
+                   Grid.Row="0"
+                   
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   FontFamily="Roboto"/>
+            <StackLayout Grid.Row="1"
+                         Margin="10, 0"
+                         VerticalOptions="Center">
+                
+            <Frame BackgroundColor="#222228"
+                   Margin="10, 5"
+                   Padding="5, 2"
+                   Visual="Default"
+                   BorderColor="#6666CC"
+                   CornerRadius="10">
+                <Entry 
+                    Text="{Binding Login}"
+                    Placeholder="Login"
+                    TextColor="White"
+                    x:Name="ELogin"
+                    Visual="Default"
+                    PlaceholderColor="White"
+                    BackgroundColor="#222228"/>
+            </Frame>
+            <Frame BackgroundColor="#222228"
+                   Margin="10, 5"
+                   Padding="5, 2"
+                   Visual="Default"
+                   BorderColor="#6666CC"
+                   CornerRadius="10">
+                <Entry 
+                    Placeholder="Password"
+                    Visual="Default"
+                    x:Name="EPass"
+                    Text="{Binding Password}"
+                    IsPassword="True"
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    BackgroundColor="#222228"/>
+            </Frame>
+                <Switch Margin="10"
+                        Toggled="Switch_Toggled"
+                        ThumbColor="#6666CC"
+                        IsToggled="False"
+                        Visual="Material"
+                        
+                        BackgroundColor="Transparent"
+                        OnColor="Gray"
+                        />
+            </StackLayout>
+            <StackLayout Grid.Row="2"
+                         VerticalOptions="Center"
+                         Margin="10, 0">
+                
+            <Button VerticalOptions="End"
+                    CornerRadius="10"
+                    BackgroundColor="#6666CC"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Text="SIGN IN" 
+                    Margin="10, 0"
+                    Command="{Binding LoginCommand}"/>
+            <Label HorizontalOptions="Center"
+                   Margin="10"
+                    VerticalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Registration"
+                            TextColor="White"
+                            TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RegistrPageCommand}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            </StackLayout>
+        
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

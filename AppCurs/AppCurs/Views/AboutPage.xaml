@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCurs.Views.AboutPage"
+             xmlns:vm="clr-namespace:AppCurs.ViewModels"
+             Title="CREATE TASK"
+             Visual="Material"
+             >
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="#17171A">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <Frame 
+                    BackgroundColor="#222228"
+                    Margin="10, 10, 10, 5"
+                    Padding="5, 2"
+                    Visual="Default"
+                    BorderColor="#6666CC"
+                    CornerRadius="10">
+                    <Entry 
+                        Placeholder="Name Task"
+                        TextColor="White"
+                        x:Name="ELogin"
+                        Visual="Default"
+                        Text="{Binding Text, Mode=TwoWay}"
+                        PlaceholderColor="White"
+                        BackgroundColor="#222228"/>
+                </Frame>
+
+                <Frame 
+                    BackgroundColor="#222228"
+                    Margin="10, 5"
+                    
+                    Visual="Default"
+                    Padding="5, 2"
+                    BorderColor="#6666CC"
+                    CornerRadius="10">
+                    <Entry 
+                        Placeholder="Description"
+                        TextColor="White"
+                        x:Name="Descript"
+                        Visual="Default"
+                        Text="{Binding Description, Mode=TwoWay}"
+                        PlaceholderColor="White"
+                        BackgroundColor="#222228"/>
+                </Frame>
+                <Frame 
+                    BackgroundColor="#222228"
+                    Margin="10, 5"
+                    Padding="5, 2"
+                    Visual="Default"
+                    BorderColor="#6666CC"
+                    CornerRadius="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Label 
+                            Text="MARK"
+                            FontSize="18"
+                            Margin="4"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            
+                            Visual="Default"/>
+                        <Label 
+                            Text="2"
+                            x:Name="LSilderValue"
+                            FontSize="18"
+                            Margin="5"
+                            HorizontalOptions="End"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            Visual="Default"/>
+                        <Slider Grid.Row="1"
+                                ThumbColor="#6666CC"
+                                Margin="0"
+                                Visual="Material"
+                                Value="1"
+                                Minimum="0"
+                                ValueChanged="Slider_ValueChanged"
+                                Maximum="10"
+                                MinimumTrackColor="#6666CC"
+                                BackgroundColor="White"/>
+                    </Grid>
+                </Frame>
+                <Frame
+                    BackgroundColor="#222228"
+                    Margin="10, 5"
+                    Padding="0"
+                    CornerRadius="10">
+                    <Grid BackgroundColor="#222228">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Text="EVERY DAY"
+                                IsEnabled="False"
+                                x:Name="BtnEveryDay"
+                                Visual="Default"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                BackgroundColor="#222228"
+                                Clicked="BtnEveryDay_Clicked"
+                                CornerRadius="0"
+                                Margin="0">
+                            <Button.Style> 
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <Trigger TargetType="Button" Property="IsEnabled" Value="True">
+                                            <Setter Property="BackgroundColor" Value="#222228"/>
+                                        </Trigger>
+                                        <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                                            <Setter Property="BackgroundColor" Value="#6666CC"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Text="ONLY ONE"
+                                Grid.Column="1"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                x:Name="BtnOnlyOne"
+                                Visual="Default"
+                                BackgroundColor="#222228"
+                                Clicked="BtnOnlyOne_Clicked"
+                                CornerRadius="0"
+                                Margin="0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <Trigger TargetType="Button" Property="IsEnabled" Value="True">
+                                            <Setter Property="BackgroundColor" Value="#222228"/>
+                                        </Trigger>
+                                        <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                                            <Setter Property="BackgroundColor" Value="#6666CC"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                </Frame>
+                <Frame Visual="Default"
+                       Margin="10"
+                       x:Name="FrmDatePicker"
+                       IsVisible="False"
+                       Padding="10, 5"
+                       CornerRadius="10"
+                       BorderColor="#6666CC"
+                       BackgroundColor="#222228">
+                    <DatePicker BackgroundColor="#222228"
+                                Visual="Default"
+                                TextColor="White"
+                                HorizontalOptions="Fill"
+                                FontSize="20"/>
+                </Frame>
+                <Button VerticalOptions="End"
+                        Margin="10, 30"
+                        Text="ADD TASK"
+                        Command="{Binding OpenWebCommand}"
+                        FontSize="20"
+                        Clicked="Button_Clicked"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="60"
+                        BackgroundColor="#6666CC"/>
+            </StackLayout>
+            
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

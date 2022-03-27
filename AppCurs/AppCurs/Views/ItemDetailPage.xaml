@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCurs.Views.ItemDetailPage"
+             Title="TASK INFO">
+    <Grid
+        Background="#17171A">
+        
+    <StackLayout Spacing="15" Padding="20"
+                 Background="#17171A">
+        <Frame BackgroundColor="#222228"
+               CornerRadius="20"
+               Padding="10">
+            
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4"/>
+                    <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Name" FontSize="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   TextColor="White"/>
+                <Frame Grid.Column="1"
+                       BackgroundColor="#6666CC"/>
+                <Label Text="{Binding Text}" FontSize="20"
+                       x:Name="NameLabel"
+                   VerticalOptions="Center"
+                   Grid.Column="2"
+                   Visual="Default"
+                   Margin="10, 0"
+                   TextColor="White"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#222228"
+               CornerRadius="20"
+               Padding="10">
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Description" FontSize="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   TextColor="White"/>
+                <Frame Grid.Column="1"
+                       BackgroundColor="#6666CC"/>
+                <Label Text="{Binding Description}" FontSize="20"
+                   VerticalOptions="Center"
+                       x:Name="DescriptionLabel"
+                   Grid.Column="2"
+                   HorizontalOptions="Center"
+                   Visual="Default"
+                   Margin="10, 0"
+                   TextColor="White"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#222228"
+               CornerRadius="20"
+               Padding="10">
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout>
+
+                    <Label Text="Mark" FontSize="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   TextColor="White"/>
+                    <!---->
+                    <Frame Padding="0"
+                           HeightRequest="4"
+                           BackgroundColor="#6666CC"/>
+                    <Label Text="Your Mark" FontSize="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   TextColor="#6666CC"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Column="1"
+                             Padding="5, 0">
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           CornerRadius="20"
+                           Margin="4"
+                           HeightRequest="10"
+                           BackgroundColor="#6666CC"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           CornerRadius="20"
+                           BackgroundColor="#6666CC"
+                           Margin="4"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           BackgroundColor="#6666CC"
+                           CornerRadius="20"
+                           Margin="4"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           BackgroundColor="#6666CC"
+                           CornerRadius="20"
+                           Margin="4"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           BackgroundColor="#6666CC"
+                           CornerRadius="20"
+                           Margin="4"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           BackgroundColor="#6666CC"
+                           CornerRadius="20"
+                           Margin="4"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           CornerRadius="20"
+                           Margin="4"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           CornerRadius="20"
+                           Margin="4"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           CornerRadius="20"
+                           Margin="4"/>
+                    <Frame Padding="0"
+                           WidthRequest="7"
+                           CornerRadius="20"
+                           Margin="4"/>
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#222228"
+               CornerRadius="20"
+               Padding="10">
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="4"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Status" FontSize="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                       Margin="5,0"
+                   TextColor="White"/>
+                <Frame Grid.Column="1"
+                       BackgroundColor="#6666CC"/>
+                    <Label Text="Unfinished" FontSize="20"
+                   VerticalOptions="Center"
+                   Grid.Column="2"
+                   HorizontalOptions="Center"
+                   Visual="Default"
+                   Margin="0"
+                   TextColor="White"/>
+                <Frame Grid.Column="3"
+                       BackgroundColor="#6666CC"/>
+                <Label Text="Every day" FontSize="20"
+                   VerticalOptions="Center"
+                   Grid.Column="4"
+                   HorizontalOptions="Center"
+                   Visual="Default"
+                   Margin="5, 0"
+                   TextColor="White"/>
+            </Grid>
+        </Frame>
+    </StackLayout>
+        <Button Margin="20"
+                VerticalOptions="End"
+                CornerRadius="15"
+                Text="Complate"
+                FontSize="20"
+                Command="{Binding }"
+                Clicked="Button_Clicked"
+                FontAttributes="Bold"
+                BackgroundColor="#6666CC"/>
+    </Grid>
+</ContentPage>
